@@ -16,7 +16,7 @@ export default function HomePage() {
         <div className="container mx-auto py-4 px-4">
           <div className="flex justify-between items-center">
             <a href="/" className="flex items-center space-x-2">
-              <div className="w-40 h-14 bg-blue-50 flex items-center justify-center text-center">
+              <div className="w-40 h-14 flex items-center justify-center text-center">
                 <span style={{ backgroundImage: "url('/Logos/IGLO_LOGO.jpg')" }}></span>
               </div>
             </a>
