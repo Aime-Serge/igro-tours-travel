@@ -17,7 +17,7 @@ export default function HomePage() {
           <div className="flex justify-between items-center">
             <a href="/" className="flex items-center space-x-2">
               <div className="w-40 h-14 bg-blue-50 flex items-center justify-center text-center">
-                <span className="font-bold text-blue-900 text-lg" style={{ backgroundImage: "url('/Logos/IGLO_LOGO.jpg')" }}></span>
+                <span className="font-bold" style={{ backgroundImage: "url('/Logos/IGLO_LOGO.jpg')" }}></span>
               </div>
             </a>
             <nav className="hidden md:flex items-center space-x-6">
