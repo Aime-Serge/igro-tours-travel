@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -6,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Link } from 'react-router-dom';
 
 export default function ToursPage() {
-  const [activeTab, setActiveTab] = useState("rwanda");
+  // Removed unused activeTab state
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -81,7 +80,7 @@ export default function ToursPage() {
       {/* Tour Selection Section */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <Tabs defaultValue="rwanda" onValueChange={setActiveTab} className="w-full">
+          <Tabs defaultValue="rwanda" className="w-full">
             <TabsList className="grid w-full max-w-lg mx-auto md:grid-cols-4 h-auto">
               <TabsTrigger value="rwanda">Rwanda</TabsTrigger>
               <TabsTrigger value="uganda">Uganda</TabsTrigger>
