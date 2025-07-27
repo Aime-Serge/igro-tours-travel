@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-// import { Card, CardContent } from "@/components/ui/card";
 import { Link } from 'react-router-dom';
 
 // Define image paths constant
@@ -68,7 +67,6 @@ export default function HomePage() {
       });
     };
 
-    // Preload all images
     const imagesToLoad = [
       IMAGE_PATHS.logo,
       IMAGE_PATHS.hero,
@@ -120,8 +118,65 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Rest of your sections */}
-      {/* ... (Keep all your existing sections) ... */}
+      {/* Hero Section */}
+      <section className="relative h-[600px]">
+        <img
+          src={IMAGE_PATHS.hero}
+          alt="Hero"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="text-center text-white">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              Discover East Africa
+            </h1>
+            <p className="text-xl mb-8">Your journey begins with us</p>
+            <Button className="bg-yellow-500 hover:bg-yellow-600 text-black">
+              Explore Tours
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {SERVICES.map((service, index) => (
+              <div 
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              >
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Destinations Section */}
+      <section id="destination" className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Popular Destinations</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {Object.entries(IMAGE_PATHS.destinations).map(([country, image]) => (
+              <div key={country} className="relative group overflow-hidden rounded-lg">
+                <img
+                  src={image}
+                  alt={country}
+                  className="w-full h-64 object-cover transition-transform group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                  <h3 className="text-white text-2xl font-bold capitalize">{country}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="bg-blue-900 text-white py-12">
